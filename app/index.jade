@@ -18,7 +18,24 @@ html(lang="en")
               a.logo(href='/') Wiki Blog
 
     section
+      .selectholder
+        label Choose a number of articles:
+        select.numberOfArticles
+          option(value='1') 1
+          option(value='2') 2
+          option(value='3') 3
+          option(value='4') 4
+          option(value='5') 5
+          option(value='6') 6
+          option(value='7') 7
+          option(value='8') 8
+          option(value='9') 9
+          option(value='10') 10
+
       a.btn(href="#") Get Articles
+
+    section.article-content
+
     section.wiki-wrapper
 
     script(type='text/javascript', src='assets/js/scripts.min.js')

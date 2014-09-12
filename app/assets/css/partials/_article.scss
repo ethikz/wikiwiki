@@ -1,0 +1,6 @@
+.article-content {
+  @extend %container;
+  max-width: 960px;
+  vertical-align: top;
+  font-size: rem(16);
+}

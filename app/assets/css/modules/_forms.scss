@@ -1,0 +1,87 @@
+.selectholder {
+  @extend %ease-trans;
+  clear: both;
+  width: 90%;
+  background: #eee;
+  margin: 1em auto;
+  font-size: 1.3em;
+  height: 2.4em;
+  color: #666;
+  cursor: pointer;
+
+  @media screen and (min-width: $break-medium) {
+    width: 50%;
+  }
+
+  @media all and (min-width: $break-large) {
+    width: 30%;
+  }
+  
+  .desc {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: .8em;
+    line-height: 2.4em;
+  }
+  
+  .pulldown {
+    @extend %ease-trans;
+    float: right;
+    vertical-align: middle;
+    width: 2.4em;
+    height: 100%;
+    background-color: #ddd;
+    background-image: url('/assets/img/pulldown.png');
+    background-size: cover;
+  }
+  
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+.activeselectholder {
+  background-color: #ddd;
+}
+
+.selectholder:hover .pulldown,
+.activeselectholder .pulldown {
+  background-color: #333;
+  background-image: url('/assets/img/pulldown_hover.png');
+}
+
+.selectdropdown {
+  position: relative;
+  top: 0;
+  left: 0;
+  background: $color-primary;
+  color: #fff;
+  display: none;
+  clear: both;
+  z-index: 1;
+  
+  span {
+    @extend %ease-trans;
+    display: block;
+    border-bottom: solid 1px #555;
+    padding-left: .8em;
+    line-height: 2.4em;
+    width: 100%;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    &.active {
+      background-color: $color-secondary;
+      background-image: url('/assets/img/radio_tick.png');
+      background-repeat: no-repeat;
+      background-size: 1.6em 1.6em;
+      background-position: 98% 50%;
+    }
+    
+    &:hover {
+      background-color: #555;
+    }
+  }
+}
