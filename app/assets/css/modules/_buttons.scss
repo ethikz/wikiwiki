@@ -1,0 +1,22 @@
+.btn {
+  @extend %ease-trans;
+  font-size: rem(16);
+  position: relative;
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 14px 15px 12px;
+  height: auto;
+  border: 1px solid $color-secondary;
+  background: $color-secondary;
+  color: $color-white;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: none;
+  font-weight: bold;
+  line-height: 1;
+  
+  &:hover {
+    background: transparent;
+    color: $color-primary;
+  }
+}

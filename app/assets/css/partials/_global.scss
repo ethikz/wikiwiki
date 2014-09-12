@@ -1,0 +1,13 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: $color-white;
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  @extend %ease-trans;
+  text-decoration: none;
+}

@@ -1,0 +1,23 @@
+.btn {
+  text-align: center;
+}
+
+.wiki {
+  @include clearfix();
+  padding: 0 10px 10px;
+  background-color: $color-white;
+  font-size: rem(16);
+  margin: 0 auto;
+
+  .title {
+    margin: 0 auto;
+
+    a {
+      color: $color-secondary;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
