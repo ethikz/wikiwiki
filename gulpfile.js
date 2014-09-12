@@ -43,11 +43,10 @@ gulp.task('css', function() {
 gulp.task('js', function() {
   return gulp.src([
       'app/assets/js/vendor/*.js',
-      'app/assets/js/plugins/*.js',
       'app/assets/js/scripts.js',
     ])
     .pipe(plugin.concat('scripts.min.js'))
-    //.pipe(plugin.uglify())
+    .pipe(plugin.uglify())
     .pipe(gulp.dest('build/assets/js'))
     .pipe(plugin.connect.reload());
 });
@@ -92,7 +91,7 @@ gulp.task('connect', function() {
   plugin.connect.server({
     root: 'build',
     port: '8001',
-    livereload: true
+    livereload: false
   });
 });
 

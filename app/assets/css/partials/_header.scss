@@ -1,14 +1,24 @@
 .header {
-  @include container();
-  @include clearfix();
+  @extend %container;
+  overflow: hidden;
   font-size: rem(22);
   background: $color-primary;
   
-  a {
-    color: $color-white;
-    
-    &:hover {
-      color: $color-secondary;
+  .nav ul {
+    padding: 0;
+    text-align: center;
+
+    @media screen and (min-width: $break-small) {
+      text-align: inherit;
+      padding: 0 0 0 40px;
+    }
+
+    a {
+      color: $color-white;
+      
+      &:hover {
+        color: $color-secondary;
+      }
     }
   }
 }

@@ -1,12 +1,14 @@
 // Vendor
-@import "vendor/responsive";
+@import "vendor/normalize";
 
 // Modules
+@import "modules/variables";
 @import "modules/functions";
+@import "modules/grid";
 @import "modules/transitions";
 @import "modules/buttons";
 
-//Partials
+// Partials
 @import "partials/global";
 @import "partials/header";
 @import "partials/wiki";

@@ -40,6 +40,7 @@ function getArticle() {
     exintro: 0,
     exsentences: 2,
     grnnamespace: 0,
+    inprop: 'url',
     format: 'json'
   }).then(function(data) {
     return _.values(data.query.pages)[0];
