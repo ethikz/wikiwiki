@@ -101,8 +101,8 @@ gulp.task('connect', function() {
 // Deploy
 // =======================================================
 gulp.task('deploy', function () {
-    gulp.src('./build/**/*')
-        .pipe(deploy('https://github.com/ethikz/wikiwiki', 'origin'));
+  gulp.src('./build/**/*')
+    .pipe(deploy('https://github.com/ethikz/wikiwiki', 'origin'));
 });
 
 
