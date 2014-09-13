@@ -1,16 +1,16 @@
 .btn {
   @extend %ease-trans;
-  font-size: rem(16);
-  position: relative;
+  background: $color-secondary;
+  border: 1px solid $color-secondary;
+  color: $color-white;
   display: inline-block;
+  font-size: rem(16);
+  height: auto;
+  line-height: 1;
   margin: 10px 5px;
   padding: 14px 15px 12px;
-  height: auto;
-  border: 1px solid $color-secondary;
-  background: $color-secondary;
-  color: $color-white;
+  position: relative;
   text-transform: uppercase;
-  line-height: 1;
   
   &:hover {
     background: transparent;

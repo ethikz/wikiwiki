@@ -1,5 +1,5 @@
 @mixin transition($animation) {
-  transition: all 0.3s $animation;
+  transition: all .3s $animation;
 }
 
 %linear-trans {

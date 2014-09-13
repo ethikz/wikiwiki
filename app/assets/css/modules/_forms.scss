@@ -1,24 +1,24 @@
 .article-select {
   @extend %ease-trans;
-  clear: both;
-  width: 90%;
   background: $color-secondary;
-  margin: 1em auto;
-  font-size: rem(16);
-  height: 2.4em;
+  clear: both;
   color: $color-white;
   cursor: pointer;
+  font-size: rem(16);
+  height: 2.4em;
+  margin: 1em auto;
+  width: 90%;
 
   @media screen and (min-width: $break-medium) {
-    width: 50%;
     font-size: rem(20);
+    width: 50%;
   }
   
   .desc {
     display: inline-block;
-    vertical-align: middle;
-    padding-left: 0.8em;
     line-height: 2.4em;
+    padding-left: .8em;
+    vertical-align: middle;
 
     @media screen and (min-width: $break-medium) {
       padding-left: 2em;
@@ -27,13 +27,13 @@
   
   .pulldown {
     @extend %ease-trans;
-    float: right;
-    vertical-align: middle;
-    width: 2.4em;
-    height: 100%;
     background-color: $color-secondary;
     background-image: url('../img/pulldown.png');
     background-size: cover;
+    float: right;
+    height: 100%;
+    vertical-align: middle;
+    width: 2.4em;
   }
 }
 
@@ -44,33 +44,33 @@
 }
 
 .selectdropdown {
-  position: relative;
-  top: 0;
-  left: 0;
   background: $color-primary;
+  clear: both;
   color: #fff;
   display: none;
-  clear: both;
+  left: 0;
+  position: relative;
+  top: 0;
   z-index: 1;
   
   span {
     @extend %ease-trans;
-    display: block;
     border-bottom: solid 1px #555;
-    padding-left: 0;
+    display: block;
     line-height: 2.4em;
+    padding-left: 0;
     width: 100%;
     
     &:last-child {
-      border-bottom: none;
+      border-bottom: 0;
     }
     
     &.active {
       background-color: $color-secondary;
       background-image: url('../img/radio_tick.png');
+      background-position: 98% 50%;
       background-repeat: no-repeat;
       background-size: 1.6em 1.6em;
-      background-position: 98% 50%;
     }
     
     &:hover {

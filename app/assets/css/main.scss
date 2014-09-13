@@ -1,16 +1,16 @@
 // Vendor
-@import "vendor/normalize";
+@import 'vendor/normalize';
 
 // Modules
-@import "modules/variables";
-@import "modules/functions";
-@import "modules/grid";
-@import "modules/transitions";
-@import "modules/buttons";
-@import "modules/forms";
+@import 'modules/variables';
+@import 'modules/functions';
+@import 'modules/grid';
+@import 'modules/transitions';
+@import 'modules/buttons';
+@import 'modules/forms';
 
 // Partials
-@import "partials/global";
-@import "partials/header";
-@import "partials/article";
-@import "partials/wiki";
+@import 'partials/global';
+@import 'partials/header';
+@import 'partials/article';
+@import 'partials/wiki';

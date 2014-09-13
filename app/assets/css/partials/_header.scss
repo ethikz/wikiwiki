@@ -1,24 +1,24 @@
 .header {
   @extend %container;
-  overflow: hidden;
-  font-size: rem(22);
   background: $color-primary;
-  
-  .nav ul {
-    padding: 0;
-    text-align: center;
+  font-size: rem(22);
+  overflow: hidden;
+}
 
-    @media screen and (min-width: $break-small) {
-      text-align: inherit;
-      padding: 0 0 0 40px;
-    }
+.nav ul {
+  padding: 0;
+  text-align: center;
 
-    a {
-      color: $color-white;
-      
-      &:hover {
-        color: $color-secondary;
-      }
+  @media screen and (min-width: $break-small) {
+    padding: 0 0 0 40px;
+    text-align: inherit;
+  }
+
+  a {
+    color: $color-white;
+    
+    &:hover {
+      color: $color-secondary;
     }
   }
 }

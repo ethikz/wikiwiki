@@ -1,8 +1,8 @@
 .article-content-wrapper,
 .article-actions {
   @extend %container;
-  max-width: 960px;
-  margin: 2% auto 5%;
-  vertical-align: top;
   font-size: rem(16);
+  margin: 2% auto 5%;
+  max-width: 960px;
+  vertical-align: top;
 }
