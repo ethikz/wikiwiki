@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     plugin = require('gulp-load-plugins')({camelize:true});
+    deploy = require('gulp-gh-pages');
 
 
 // Paths
@@ -30,7 +31,7 @@ gulp.task('html', function() {
 gulp.task('css', function() {
   return gulp.src(paths.scss)
     .pipe(plugin.sass())
-    .pipe(plugin.autoprefixer("last 1 version"))
+    .pipe(plugin.autoprefixer("last 2 version"))
     .pipe(plugin.minifyCss())
     .pipe(gulp.dest('build/assets/css'))
     .pipe(plugin.connect.reload());
@@ -94,6 +95,14 @@ gulp.task('connect', function() {
     port: '8001',
     livereload: true
   });
+});
+
+
+// Deploy
+// =======================================================
+gulp.task('deploy', function () {
+    gulp.src('./build/**/*')
+        .pipe(deploy('https://github.com/ethikz/portfolio', 'origin'));
 });
 
 
