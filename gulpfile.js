@@ -102,7 +102,7 @@ gulp.task('connect', function() {
 // =======================================================
 gulp.task('deploy', function () {
     gulp.src('./build/**/*')
-        .pipe(deploy('https://github.com/ethikz/portfolio', 'origin'));
+        .pipe(deploy('https://github.com/ethikz/wikiwiki', 'origin'));
 });
 
 
