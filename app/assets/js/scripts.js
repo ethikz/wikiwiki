@@ -21,6 +21,9 @@ _.templateSettings = {
 var WIKIPEDIA_API_URL = 'http://en.wikipedia.org/w/api.php',
   articleExtractTemplate = _.template(
     '<div class="wiki">' +
+      '<div class="image">' +
+        '<img src="{{ article.imageUrl }}">' +
+      '</div>' +
       '<div class="title">' +
         '<a href="#">{{ article.title }}</a>' +
       '</div>' +
@@ -42,7 +45,7 @@ function getJSONP(url, data) {
 function getArticleExtracts() {
   getJSONP(WIKIPEDIA_API_URL, {
     action: 'query',
-    prop: 'info|extracts',
+    prop: 'images|info|extracts|pageimages',
     generator: 'random',
     grnlimit: numberOfArticles || 2,
     exintro: true,
@@ -50,10 +53,30 @@ function getArticleExtracts() {
     exsentences: 2,
     grnnamespace: 0,
     inprop: 'url',
+    imlimit: 1,
+    iiurlwidth: '275',
+    iiurlheight: '100',
     format: 'json'
   }).then(function(data) {
     return _.values(data.query.pages)[0];
-  }).then(appendArticleExtracts);
+  }).then(getImage);
+}
+
+function getImage(article) {
+  getJSONP(WIKIPEDIA_API_URL, {
+    action: 'query',
+    titles: 'File:' + article.pageimage,
+    prop: 'imageinfo',
+    iiprop: 'url',
+    iilocalonly: '',
+    format: 'json'
+  }).then(function(data) {
+    data = _.values(data.query.pages)[0];
+    if (data.imageinfo) {
+      article.imageUrl = data.imageinfo[0].url;
+    }
+    appendArticleExtracts(article);
+  });
 }
 
 function appendArticleExtracts(article) {
