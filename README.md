@@ -15,3 +15,5 @@ gulp
 3) The live reload server runs on http://localhost:8001
 
 If the port needs to change go to line 94 in the gulpfile.js
+
+Also note that if testing on IE, locally open the gulpfile and on line 95, set livereload: false

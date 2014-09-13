@@ -47,7 +47,7 @@ gulp.task('js', function() {
       'app/assets/js/scripts.js',
     ])
     .pipe(plugin.concat('scripts.min.js'))
-    // .pipe(plugin.uglify())
+    .pipe(plugin.uglify())
     .pipe(gulp.dest('build/assets/js'))
     .pipe(plugin.connect.reload());
 });
