@@ -1,7 +1,9 @@
+// Initialize underscore template variables
 _.templateSettings = {
   interpolate: /\{\{(.+?)\}\}/g
 };
 
+// Google Font Loader
 (function () {
   WebFontConfig = {
     google: { families: ['Raleway:100,600', 'Ubuntu:400,700'] }
@@ -15,6 +17,7 @@ _.templateSettings = {
   s.parentNode.insertBefore(wf, s);
 }());
 
+// Define api url and templates
 var WIKIPEDIA_API_URL = 'http://en.wikipedia.org/w/api.php',
   articleExtractTemplate = _.template(
     '<div class="wiki">' +
@@ -35,6 +38,7 @@ function getJSONP(url, data) {
   });
 }
 
+// Get's Article Extract on button press
 function getArticleExtracts() {
   getJSONP(WIKIPEDIA_API_URL, {
     action: 'query',
@@ -52,6 +56,19 @@ function getArticleExtracts() {
   }).then(appendArticleExtracts);
 }
 
+function appendArticleExtracts(article) {
+  $('.wiki-wrapper').append(articleExtractTemplate({article: article}));
+}
+
+function articleExt() {
+  numberOfArticles = $('.numberOfArticles').val();
+  $('.wiki-wrapper').empty();
+  $('.article-content-wrapper').empty();
+  _.each(_.range(0,numberOfArticles), getArticleExtracts);
+}
+
+
+// Get's article on clicking article extract link
 function getArticle(title) {
   getJSONP(WIKIPEDIA_API_URL, {
     action: 'query',
@@ -68,19 +85,8 @@ function getArticle(title) {
   }).then(appendArticle);
 }
 
-function appendArticleExtracts(article) {
-  $('.wiki-wrapper').append(articleExtractTemplate({article: article}));
-}
-
 function appendArticle(article) {
   $('.article-content-wrapper').append(articleContentTemplate({article: article}));
-}
-
-function articleExt() {
-  numberOfArticles = $('.numberOfArticles').val();
-  $('.wiki-wrapper').empty();
-  $('.article-content-wrapper').empty();
-  _.each(_.range(0,numberOfArticles), getArticleExtracts);
 }
 
 function articleCont(title) {
@@ -88,6 +94,8 @@ function articleCont(title) {
   getArticle(title);
 }
 
+
+// Click events
 $('.btn').click(articleExt);
 
 $(document).on("click", ".title a", function(e) {
