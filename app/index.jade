@@ -3,11 +3,13 @@ html(lang="en")
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title Wiki Blog
+    title WikiWiki
     meta(name='viewport', content='width=device-width')
     link(rel='stylesheet', href='assets/css/main.css')
     link(rel='shortcut icon', href='assets/img/favicon.png')
     link(rel='apple-touch-icon', href='assets/img/apple-touch-icon.png')
+    //if lte IE 9
+      script(type='text/javascript', src='js/jquery.masonry.min.js')
   body
 
     header.header
@@ -15,10 +17,10 @@ html(lang="en")
         nav.nav
           ul
             li
-              a.logo(href='/') Wiki Blog
+              a.logo(href='/') WikiWiki
 
-    section
-      .selectholder
+    section.article-actions
+      .article-select
         label Choose a number of articles:
         select.numberOfArticles
           option(value='1') 1
@@ -34,7 +36,7 @@ html(lang="en")
 
       a.btn(href="#") Get Articles
 
-    section.article-content
+    section.article-content-wrapper
 
     section.wiki-wrapper
 

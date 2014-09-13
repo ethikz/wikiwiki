@@ -1,17 +1,37 @@
+.wiki-wrapper {
+  @extend %container;
+  max-width: 960px;
+  margin: 5% auto;
+  column-count: 1;
+  column-gap: 20px;
+
+  @media screen and (min-width: $break-medium) {
+    column-count: 2;
+  }
+
+  @media all and (min-width: $break-large) {
+    column-count: 3;
+  }
+}
+
 .wiki {
   @extend %container;
   display: inline-block;
   vertical-align: top;
-  padding: 0 10px 10px;
+  padding: 10px 20px;
+  height: auto;
+  width: 100%;
   background-color: $color-white;
   font-size: rem(16);
+  margin: 5% auto;
+  border-radius: 8px;
 
   @media screen and (min-width: $break-medium) {
-    width: 50%;
+    min-height: 100px;
   }
 
   @media all and (min-width: $break-large) {
-    width: 33.33%;
+    min-height: 200px;
   }
 
   .title {

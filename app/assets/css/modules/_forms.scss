@@ -1,27 +1,28 @@
-.selectholder {
+.article-select {
   @extend %ease-trans;
   clear: both;
   width: 90%;
-  background: #eee;
+  background: $color-secondary;
   margin: 1em auto;
-  font-size: 1.3em;
+  font-size: rem(16);
   height: 2.4em;
-  color: #666;
+  color: $color-white;
   cursor: pointer;
 
   @media screen and (min-width: $break-medium) {
     width: 50%;
-  }
-
-  @media all and (min-width: $break-large) {
-    width: 30%;
+    font-size: rem(20);
   }
   
   .desc {
     display: inline-block;
     vertical-align: middle;
-    padding-left: .8em;
+    padding-left: 0.8em;
     line-height: 2.4em;
+
+    @media screen and (min-width: $break-medium) {
+      padding-left: 2em;
+    }
   }
   
   .pulldown {
@@ -30,23 +31,15 @@
     vertical-align: middle;
     width: 2.4em;
     height: 100%;
-    background-color: #ddd;
+    background-color: $color-secondary;
     background-image: url('/assets/img/pulldown.png');
     background-size: cover;
   }
-  
-  &:hover {
-    background-color: #ddd;
-  }
 }
 
-.activeselectholder {
-  background-color: #ddd;
-}
-
-.selectholder:hover .pulldown,
-.activeselectholder .pulldown {
-  background-color: #333;
+.article-select:hover .pulldown,
+.active-article-select .pulldown {
+  background-color: $color-secondary;
   background-image: url('/assets/img/pulldown_hover.png');
 }
 
@@ -64,7 +57,7 @@
     @extend %ease-trans;
     display: block;
     border-bottom: solid 1px #555;
-    padding-left: .8em;
+    padding-left: 0;
     line-height: 2.4em;
     width: 100%;
     
@@ -81,7 +74,7 @@
     }
     
     &:hover {
-      background-color: #555;
+      background-color: $color-secondary;
     }
   }
 }
