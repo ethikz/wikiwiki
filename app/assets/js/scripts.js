@@ -41,7 +41,7 @@ function getJSONP(url, data) {
   });
 }
 
-// Get's Article Extract on button press
+// Get's Article Extract on button press and load images
 function getArticleExtracts() {
   getJSONP(WIKIPEDIA_API_URL, {
     action: 'query',
