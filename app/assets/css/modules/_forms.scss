@@ -32,7 +32,7 @@
     width: 2.4em;
     height: 100%;
     background-color: $color-secondary;
-    background-image: url('/assets/img/pulldown.png');
+    background-image: url('../img/pulldown.png');
     background-size: cover;
   }
 }
@@ -40,7 +40,7 @@
 .article-select:hover .pulldown,
 .active-article-select .pulldown {
   background-color: $color-secondary;
-  background-image: url('/assets/img/pulldown_hover.png');
+  background-image: url('../img/pulldown_hover.png');
 }
 
 .selectdropdown {
@@ -67,7 +67,7 @@
     
     &.active {
       background-color: $color-secondary;
-      background-image: url('/assets/img/radio_tick.png');
+      background-image: url('../img/radio_tick.png');
       background-repeat: no-repeat;
       background-size: 1.6em 1.6em;
       background-position: 98% 50%;
